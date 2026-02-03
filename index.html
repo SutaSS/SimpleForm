@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Us</title>
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Leaflet -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Let's Create Fantastic Project</h1>
+
+    <form id="contactForm">
+      <label>Nama</label>
+      <input type="text" id="nama" />
+
+      <label>Subject</label>
+      <select id="subject">
+        <option value="">Pilih Subject</option>
+        <option value="Tanya Produk">Tanya Produk</option>
+        <option value="Kerja Sama">Kerja Sama</option>
+      </select>
+
+      <label>Provinsi</label>
+      <select id="provinsi">
+        <option value="">Pilih Provinsi</option>
+      </select>
+
+      <label>Kota / Kabupaten</label>
+      <select id="kota">
+        <option value="">Pilih Kota / Kabupaten</option>
+      </select>
+
+      <label>Message</label>
+      <textarea id="message"></textarea>
+      
+      <div id="map"></div>
+
+      <button type="submit">Kirim via WhatsApp</button>
+    </form>
+  </div>
+
+  <script src="assets/js/api/wilayahApi.js"></script>
+  <script src="assets/js/map.js"></script>
+  <script src="assets/js/form.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

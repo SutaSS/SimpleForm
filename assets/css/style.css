@@ -1,0 +1,52 @@
+body {
+  font-family: system-ui, sans-serif;
+  background: #f9fafb;
+}
+.container {
+  max-width: 720px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+h1 {
+  font-size: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+#contactForm {
+  padding: 16px;
+}
+label {
+  font-weight: 600;
+  margin-top: 16px;
+  display: block;
+}
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+button {
+  margin-top: 24px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #111827;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+#map {
+  height: 280px;
+  margin-top: 24px;
+  border-radius: 12px;
+}
