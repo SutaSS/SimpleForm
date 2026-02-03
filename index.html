@@ -23,10 +23,10 @@
 
       <form id="contactForm">
         <label>Nama</label>
-        <input type="text" id="nama" />
+        <input type="text" id="nama" required />
 
         <label>Subject</label>
-        <select id="subject">
+        <select id="subject" required>
           <option value="">Pilih Subject</option>
           <option value="Kerja Sama">Kerja Sama</option>
           <option value="Konsultasi Produk">Konsultasi Produk</option>
@@ -34,12 +34,12 @@
         </select>
 
         <label>Provinsi</label>
-        <select id="provinsi">
+        <select id="provinsi" required>
           <option value="">Pilih Provinsi</option>
         </select>
 
         <label>Kota / Kabupaten</label>
-        <select id="kota">
+        <select id="kota" required>
           <option value="">Pilih Kota / Kabupaten</option>
         </select>
 
@@ -52,7 +52,7 @@
         />
 
         <label>Message</label>
-        <textarea id="message"></textarea>
+        <textarea id="message" required></textarea>
 
         <div id="map"></div>
 
