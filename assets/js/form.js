@@ -50,6 +50,31 @@ async function initForm() {
     zoomToLocation(`${kotaText}, ${provinsiText}, Indonesia`, 11);
   });
 
+  $("#address").on("blur", async function () {
+  const text = $(this).val();
+  if (!text) return;
+
+  try {
+    const result = await forwardGeocode(text);
+
+    // simpan lokasi global
+    window.selectedLocation = {
+      lat: result.lat,
+      lng: result.lng,
+    };
+
+    // update dropdown (tanpa user pilih manual)
+    setProvinsiDanKota(result.province, result.city);
+
+    // opsional: pindahkan marker & map
+    marker.setLatLng([result.lat, result.lng]);
+    map.setView([result.lat, result.lng], 16);
+  } catch (e) {
+    console.error(e);
+  }
+});
+
+
   /* ======================
      SUBMIT
   ====================== */
@@ -69,11 +94,23 @@ async function initForm() {
       return;
     }
 
+    const address = $("#address").val().trim();
+
+    if (!address) {
+      alert("Alamat belum diisi. Geser marker pada peta.");
+      return;
+    }
+
     const text = `
 Halo! saya ${nama}
 Subject: ${subject}
-Domisili: ${kotaText}, ${provinsiText}
-Lokasi: https://maps.google.com/?q=${lat},${lng}
+
+Domisili:
+${address}
+${kotaText}, ${provinsiText}
+
+Lokasi:
+https://maps.google.com/?q=${lat},${lng}
 
 ${message}
 `;

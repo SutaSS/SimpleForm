@@ -50,3 +50,46 @@ button {
   margin-top: 24px;
   border-radius: 12px;
 }
+
+
+/* Optimalisasi Responsif */
+/* ... Kode CSS lama kamu tetap di atas ... */
+
+@media (max-width: 768px) {
+  body {
+    margin: 0; /* Menghilangkan margin default browser */
+    background: #fff; /* Opsional: samakan background agar menyatu dengan container */
+  }
+
+  .container {
+    max-width: 100%;    /* Memenuhi lebar layar sepenuhnya */
+    margin: 0;          /* Menghilangkan jarak di atas, bawah, kiri, dan kanan */
+    padding: 24px;      /* Tetap beri padding dalam agar teks tidak mepet ke pinggir */
+    border-radius: 0;   /* Menghilangkan sudut tumpul agar terlihat flush di layar HP */
+    box-shadow: none;   /* Menghilangkan bayangan karena sudah full-screen */
+    
+    /* KUNCI UNTUK STRETCH KE BAWAH */
+    min-height: 100vh;  /* Minimal tinggi adalah 100% dari tinggi layar (Viewport Height) */
+    display: flex;
+    flex-direction: column;
+  }
+
+  #contactForm {
+    padding: 0;         /* Reset padding form jika perlu */
+    flex-grow: 1;       /* Memaksa area form untuk mengisi ruang yang tersedia */
+  }
+
+  input, 
+  select, 
+  textarea, 
+  button {
+    font-size: 16px;    /* Ukuran tetap nyaman tanpa mengecilkan */
+    padding: 12px;
+  }
+
+  #map {
+    height: 300px;      /* Kamu bisa memperbesar peta karena ruangnya sekarang lebih luas */
+    margin-top: auto;   /* Opsional: mendorong peta ke bagian paling bawah jika konten di atas sedikit */
+    border-radius: 8px;
+  }
+}
