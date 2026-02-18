@@ -4,9 +4,7 @@ async function initForm() {
 
   $kota.prop("disabled", true);
 
-  /* ======================
-     LOAD PROVINSI
-  ====================== */
+  // LOAD PROVINSI
   try {
     const provinsiList = await fetchProvinsi();
     provinsiList.forEach((prov) => {
@@ -16,9 +14,7 @@ async function initForm() {
     alert("Gagal memuat data provinsi");
   }
 
-  /* ======================
-     PROVINSI CHANGE
-  ====================== */
+  // PROVINSI CHANGE 
   $provinsi.on("change", async function () {
     const idProv = $(this).val();
     const provinsiText = $("#provinsi option:selected").text();
@@ -74,12 +70,8 @@ async function initForm() {
     }
   });
 
-  /* ======================
-     SUBMIT
-  ====================== */
-  /* ======================
-   SUBMIT (VALIDASI LENGKAP)
-====================== */
+
+  // SUBMIT
   $("#contactForm").on("submit", function (e) {
     e.preventDefault();
 
